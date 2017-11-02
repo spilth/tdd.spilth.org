@@ -1,0 +1,23 @@
+body {
+  max-width: 760px;
+  margin: auto;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  font-size: 20px;
+  font-family: "Merriweather", "Times New Roman", serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Source Sans Pro", "Helvetica", sans-serif;
+}
+
+p {
+  margin-bottom: 1.2em;
+}
+
+pre {
+  overflow: auto;
+}
+
+<%= Rouge::Themes::ThankfulEyes.render(:scope => '.highlight') %>
+

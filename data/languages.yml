@@ -1,0 +1,79 @@
+-
+  path: elixir
+  title: Elixir
+  project: elixiryay
+  homebrew: brew install elixir
+  initializer:
+    name: mix
+    install: "# mix is installed along with Elixir"
+    initialize: mix new elixiray && cd elixiray
+  dependencies:
+    name: mix
+    url: https://hexdocs.pm/mix/Mix.html
+    install: "# mix is installed along with Elixir"
+    file: mix.exs
+    lockfile: ???
+    resolve: mix deps.get
+  testing:
+    name: ExUnit
+    url: https://hexdocs.pm/ex_unit/ExUnit.html
+-
+  path: node
+  title: NodeJS
+  project: odenay
+  homebrew: brew install nodejs
+  initializer:
+    name: npm
+    url: https://www.npmjs.com
+    install: "# npm is installed along with NodeJS"
+    initialize: mkdir odenay && cd odenay && npm init --yes
+  dependencies:
+    name: npm
+    url: https://www.npmjs.com
+    install: "# npm is installed along with NodeJS"
+    file: package.json
+    lockfile: package-lock.json
+    resolve: npm install
+  testing:
+    name: Mocha
+    url: https://mochajs.org
+-
+  path: ruby
+  title: Ruby
+  project: ubyray
+  homebrew: brew install ruby
+  initializer:
+    name: Bundler
+    url: http://bundler.io
+    install: gem install bundler
+    initialize: bundle gem ubyray --no-coc --no-mit
+  dependencies:
+    name: Bundler
+    url: http://bundler.io
+    install: "# We already installed Bundler above"
+    file: Gemfile
+    lockfile: Gemfile.lock
+    resolve: bundle
+  testing:
+    name: RSpec
+    url: http://rspec.info
+-
+  path: java
+  title: Java
+  project: avajay
+  homebrew: brew cask install java
+  initializer:
+    name: Maven
+    url: https://maven.apache.org
+    install: brew install maven
+    initialize: mvn archetype:generate -DgroupId=com.example -DartifactId=avajay -Dversion=0.1-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+  dependencies:
+    name: Maven
+    url: https://maven.apache.org
+    install: "# We already installed Maven above"
+    file: pom.xml
+    resolve: mvn dependency:resolve
+  testing:
+    name: JUnit
+    url: http://junit.org
+

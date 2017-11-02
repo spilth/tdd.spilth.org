@@ -1,0 +1,63 @@
+<p><a href="/">Home</a></p>
+
+<h1>Test Driven Development with <%= language['title'] %></h1>
+
+<h2>Installing Homebrew</h2>
+
+<p>We're going to start by installing Homebrew which will make installing everything else we need much easier.</p>
+
+<p>Open a Terminal window and run the following commands:</p>
+
+<% code('bash') do %>
+xcode-select --install
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+<% end %>
+
+<p>Then ensure you have the latest version of Homebrew by typing the following:</p>
+
+<% code('bash') do %>
+brew update
+<% end %>
+
+<p>And finally, ensure that Homebrew's environment is in a healthy state:</p>
+
+<% code('bash') do %>
+brew doctor
+<% end %>
+
+<p>This may give you some commands to run in order to fix any problems, which you should do before continuing.</p>
+
+<h2>Installing <%= language['title'] %></h2>
+
+<p>Now we can easily install <%= language['title'] %> with Homebrew using the following:</p>
+
+<% code('bash') do %>
+<%= language['homebrew'] %>
+<% end %>
+
+<h2>Creating the Project</h2>
+
+<p>Now we'll use <%= link_to language['initializer']['name'], language['initializer']['url'] %> to initialize a project for us.</p>
+
+<% code('bash') do %>
+<%= language['initializer']['install'] %>
+<%= language['initializer']['initialize'] %>
+cd <%= language['project'] %>
+<% end %>
+
+<h2>Dependency Management</h2>
+
+<p>TK about dependencies</p>
+
+<% code('bash') do %>
+<%= language['dependencies']['install'] %>
+<% end %>
+
+<p>Your dependencies will be defined in <code><%= language['dependencies']['file'] %></code>.</p>
+
+<h2>Adding a Testing Library</h2>
+
+<p>We'll use the testing library <%= link_to language['testing']['name'], language['testing']['url'] %>.</p>
+
+<p>Then we can edit the file <code><%= language['dependencies']['file'] %></code> and add <%= language ['testing']['name'] %>.</p>
+

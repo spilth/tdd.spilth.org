@@ -1,0 +1,72 @@
+<h1>Test Drive All the Languages!</h1>
+
+<p>When I want to play around with a new language I start by trying to make a Pig Latin translator and I try to build it using Test Driven Development.</p>
+
+<p>Regardless of the language, the journey is pretty much the same:</p>
+
+<ul>
+  <li>install the language</li>
+  <li>use a standard project structure</li>
+  <li>use a build tool</li>
+  <li>use a dependency management tool</li>
+  <li>use a testing framework</li>
+  <li>write tests to drive out the functionality</li>
+  <li>create a <code>.gitignore</code></li>
+  <li>get it running on a continuous integration server</li>
+  <li>distribute the library so that others can use it</li>
+</ul>
+
+<p>This project is an attempt to document that process for as many languages as possible.</p>
+
+<p>It assumes you are on a Mac.</p>
+
+<h2>Pig Latin Rules</h2>
+
+<p>Here are the rules for translating words from English to Pig Latin:</p>
+
+<ul>
+  <li>For words which begin with vowel sounds or silent letter, one just adds &ldquo;way&rdquo; to the end. </li>
+  <li>For words that begin with consonant sounds, all letters before the initial vowel are placed at the end of the word sequence. Then, &ldquo;ay&rdquo; (some people just add &ldquo;a&rdquo;) is added.</li>
+</ul>
+
+<h2>Tests</h2>
+
+<p>Here are the tests we will use to help us build out the Pig Latin translator:</p>
+
+<h3>Words Starting with Vowels</h3>
+
+<ul>
+  <li>The word <code>apple</code> should translate to <code>appleway</code></li>
+  <li>The word <code>orange</code> should translate to <code>orangeway</code></li>
+</ul>
+
+<h3>Words Starting with Single Consonant</h3>
+
+<ul>
+  <li>The word <code>computer</code> should translate to <code>omputercay</code></li>
+  <li>The word <code>coding</code> should translate to <code>odingcay</code></li>
+</ul>
+
+<h3>Words Starting with Multilple Consonants</h3>
+
+<ul>
+  <li>The word <code>programming</code> should translate to <code>ogrammingpray</code></li>
+  <li>The word <code>string</code> should translate to <code>ingstray</code></li>
+</ul>
+
+<h3>Maintaining Capilatizion</h3>
+
+<ul>
+  <li>The word <code>Apple</code> should translate to <code>Appleway</code></li>
+  <li>The word <code>Computer</code> should translate to <code>Omputercay</code></li>
+  <li>The word <code>Programming</code> should translate to <code>Ogramingpray</code></li>
+  <li>The word <code>String</code> should translate to <code>Ingstray</code></li>
+</ul>
+
+<h2>How would you like to proceed?</h2>
+
+<ul>
+  <% data.languages.sort_by { |language| language['title'] }.each do |language| %>
+  <li><%= link_to language.title, language.path %></li>
+  <% end %>
+</ul>
