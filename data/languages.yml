@@ -5,6 +5,7 @@
   homebrew: brew install elixir
   initializer:
     name: mix
+    url: https://hexdocs.pm/mix/Mix.html
     install: "# mix is installed along with Elixir"
     initialize: mix new elixiray && cd elixiray
   dependencies:
@@ -76,4 +77,3 @@
   testing:
     name: JUnit
     url: http://junit.org
-
