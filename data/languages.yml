@@ -1,4 +1,24 @@
 -
+  path: clojure
+  title: Clojure
+  project: piglatin
+  homebrew: brew install clojure
+  initializer:
+    name: Leiningen
+    url: https://leiningen.org
+    install: brew intall leiningen
+    initialize: lein new default piglatin && cd piglatin
+  dependencies:
+    name: Leiningen
+    url: https://leiningen.org
+    install: "# leiningen was already installed above"
+    file: project.clj
+    lockfile: ???
+    resolve: lein deps
+  testing:
+    name: clojure.test
+    url: https://clojure.github.io/clojure/clojure.test-api.html
+-
   path: elixir
   title: Elixir
   project: elixiryay
@@ -36,8 +56,32 @@
     lockfile: package-lock.json
     resolve: npm install
   testing:
-    name: Mocha
-    url: https://mochajs.org
+    name: Jasmine
+    url: https://jasmine.github.io
+    run: jasmine
+  first_test:
+    file: test/odenay_test.js
+    content: |+
+      describe("translateWord", function () {
+        it("should translate the word", function () {
+          var result = piglatin.translateWord("apple");
+          expect(result).toBe("appleyay");
+        });
+      });
+    result: |+
+      Started
+      F
+
+      Failures:
+      1) translateWorld should translate the word
+        Message:
+          ReferenceError: piglatin is not defined
+        Stack:
+          ReferenceError: piglatin is not defined
+              at Object.<anonymous> (/Users/bkelly/temp/piglatin-nodejs/spec/piglatin_spec.js:3:18)
+
+      1 spec, 1 failure
+      Finished in 0.005 seconds
 -
   path: ruby
   title: Ruby
@@ -58,6 +102,19 @@
   testing:
     name: RSpec
     url: http://rspec.info
+    run: rspec
+  first_test:
+    file: spec/piglatin_spec.rb
+    content: |+
+      describe Piglatin do
+        context "word startig with a vowel" do
+          it "translates the word" do
+            expect(Piglatin.translate_word "apple").to eq "appleway"
+          end
+        end
+      end
+    result: |+
+      ...spec/piglatin_spec.rb:1:in `<top (required)>': uninitialized constant Piglatin (NameError)
 -
   path: java
   title: Java
@@ -77,3 +134,28 @@
   testing:
     name: JUnit
     url: http://junit.org
+    run: mvn test
+  first_test:
+    file: src/test/java/tdd/PiglatinTest.java
+    content: |+
+      package tdd;
+
+      import org.junit.Test;
+
+      public class PiglatinTest {
+          @Test
+          public void translateWord_startingWithVowel() {
+              assertEquals("apple", Piglatin.translateWorld("appleyay"));
+          }
+      }
+    result: |+
+      [INFO] Compiling 2 source files to /Users/bkelly/temp/piglatin-java/target/test-classes
+      [INFO] -------------------------------------------------------------
+      [ERROR] COMPILATION ERROR :
+      [INFO] -------------------------------------------------------------
+      [ERROR] /Users/bkelly/temp/piglatin-java/src/test/java/tdd/PiglatinTest.java:[9,32] cannot find symbol
+        symbol:   variable Piglatin
+        location: class tdd.PiglatinTest
+      [INFO] 1 error
+      [INFO] -------------------------------------------------------------
+
