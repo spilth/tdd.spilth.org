@@ -4,19 +4,41 @@ body {
   margin-bottom: 2em;
   padding: 16px;
   font-size: 16px;
-  font-family: "Merriweather", "Times New Roman", serif;
+  line-height: 22px;
+  font-family: "Lora", "Times New Roman", serif;
+  color: #444;
+}
+
+@media(min-width:768px) {
+  body {
+    font-size: 20px;
+    line-height: 32px;
+  }
 }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Source Sans Pro", "Helvetica", sans-serif;
+  font-family: "Roboto", "Helvetica", sans-serif;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 p {
+  margin-top: 0.5em;
   margin-bottom: 1.2em;
 }
 
 pre {
   overflow: auto;
+}
+
+pre {
+  font-size: 0.9em;
+}
+
+p code, li code {
+  background: #eee;
+  padding-left: 0.2em;
+  padding-right: 0.2em;
 }
 
 <%= Rouge::Themes::ThankfulEyes.render(:scope => '.highlight') %>
