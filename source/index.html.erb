@@ -1,32 +1,30 @@
 <h1>Test Drive All the Languages!</h1>
 
-<p>When I want to play around with a new language I start by trying to make a Pig Latin translator and I try to build it using Test Driven Development.</p>
+<p>When I want to learn a new programming language I start by making a Pig Latin translation library using <a href="https://en.wikipedia.org/wiki/Test-driven_development">Test Driven Development.</a></p>
 
-<p>Regardless of the language, the journey is pretty much the same:</p>
+<p>Regardless of the language the journey is pretty much the same:</p>
 
 <ul>
   <li>Install the language</li>
-  <li>Use a standard project structure</li>
+  <li>Use a standard directory structure</li>
   <li>Use a build tool</li>
   <li>Use a dependency management tool</li>
   <li>Use a testing framework</li>
-  <li>Write tests to drive out the functionality</li>
-  <li>Create a <code>.gitignore</code></li>
-  <li>Get it running on a continuous integration server</li>
+  <li>Write tests to drive out functionality</li>
   <li>Distribute the library so that others can use it</li>
 </ul>
 
-<p>This project is an attempt to document that process for as many languages as possible.</p>
+<p>This project is an attempt to document that process for as many modern programming languages as possible.</p>
 
-<p>It assumes you are on a Mac.</p>
+<p><em>Note: Currently the instructions assume you are on a Mac.</em></p>
 
 <h2>Pig Latin Rules</h2>
 
 <p>Here are the rules for translating words from English to Pig Latin:</p>
 
 <ul>
-  <li>For words which begin with vowel sounds or silent letter, one just adds &ldquo;yay&rdquo; to the end. </li>
-  <li>For words that begin with consonant sounds, all letters before the initial vowel are placed at the end of the word sequence. Then, &ldquo;ay&rdquo; (some people just add &ldquo;a&rdquo;) is added.</li>
+  <li>When a word starts with a vowel sound or silent letter, add <code>yay</code> to the end of the word.</li>
+  <li>When a word starts with a consonant sounds, move all letters before the initial vowel to the end of the word. Then <code>ay</code> is also added to the end of the word.</li>
 </ul>
 
 <h2>Tests</h2>
@@ -63,7 +61,9 @@
   <li>The word <code>String</code> should translate to <code>Ingstray</code></li>
 </ul>
 
-<h2>How would you like to proceed?</h2>
+<h2>Start Your Journey</h2>
+
+<p>Choose the language you would like to learn:</p>
 
 <ul>
   <% data.languages.sort_by { |language| language['title'] }.each do |language| %>
