@@ -28,7 +28,7 @@
 
       (deftest word-starting-with-a-vowel
         (testing "translate_word"
-          (is (= "appleway" (translate_word "apple")))))
+          (is (= "appleyay" (translate_word "apple")))))
     result: |+
       Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol: translate_word in this context, compiling:(piglatin/core_test.clj:7:23)
 -
@@ -60,14 +60,14 @@
         doctest Elixiray
 
         test "word starting with a vowel" do
-          assert Elixiray.translate_word("apple") == "appleway"
+          assert Elixiray.translate_word("apple") == "appleyay"
         end
       end
     result: |+
           1) test word starting with a vowel (ElixirayTest)
              test/elixiray_test.exs:5
              ** (UndefinedFunctionError) function Elixiray.translate_word/1 is undefined or private
-             code: assert Elixiray.translate_word("apple") == "appleway"
+             code: assert Elixiray.translate_word("apple") == "appleyay"
              stacktrace:
                (elixiray) Elixiray.translate_word("apple")
                test/elixiray_test.exs:6: (test)
@@ -140,9 +140,9 @@
     file: spec/piglatin_spec.rb
     content: |+
       describe Piglatin do
-        context "word startig with a vowel" do
+        context "word starting with a vowel" do
           it "translates the word" do
-            expect(Piglatin.translate_word "apple").to eq "appleway"
+            expect(Piglatin.translate_word "apple").to eq "appleyay"
           end
         end
       end
