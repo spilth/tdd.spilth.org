@@ -18,6 +18,19 @@
   testing:
     name: clojure.test
     url: https://clojure.github.io/clojure/clojure.test-api.html
+    run: lein test
+  first_test:
+    file: test/piglatin/core_test.clj
+    content: |+
+      (ns piglatin.core-test
+        (:require [clojure.test :refer :all]
+                  [piglatin.core :refer :all]))
+
+      (deftest word-starting-with-a-vowel
+        (testing "translate_word"
+          (is (= "appleway" (translate_word "apple")))))
+    result: |+
+      Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol: translate_word in this context, compiling:(piglatin/core_test.clj:7:23)
 -
   path: elixir
   title: Elixir
@@ -38,6 +51,26 @@
   testing:
     name: ExUnit
     url: https://hexdocs.pm/ex_unit/ExUnit.html
+    run: mix test
+  first_test:
+    file: text/elixiray_text.exs
+    content: |+
+      defmodule ElixirayTest do
+        use ExUnit.Case
+        doctest Elixiray
+
+        test "word starting with a vowel" do
+          assert Elixiray.translate_word("apple") == "appleway"
+        end
+      end
+    result: |+
+          1) test word starting with a vowel (ElixirayTest)
+             test/elixiray_test.exs:5
+             ** (UndefinedFunctionError) function Elixiray.translate_word/1 is undefined or private
+             code: assert Elixiray.translate_word("apple") == "appleway"
+             stacktrace:
+               (elixiray) Elixiray.translate_word("apple")
+               test/elixiray_test.exs:6: (test)
 -
   path: node
   title: NodeJS
