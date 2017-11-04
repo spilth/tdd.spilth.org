@@ -13,3 +13,8 @@ activate :s3_sync do |s3_sync|
   s3_sync.acl    = 'public-read'
 end
 
+helpers do
+  def languages
+    data.languages.sort_by { |language| language['title'] }
+  end
+end

@@ -3,20 +3,19 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
     <title><%= yield_content :title %></title>
 
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
+
     <link href="https://fonts.googleapis.com/css?family=Lora|Roboto:700" rel="stylesheet">
   </head>
 
   <body>
     <ul class="navbar">
       <li><a href="/">Home</a></li>
-      <% data.languages.sort_by { |language| language['title'] }.each do |language| %>
+      <% languages.each do |language| %>
         <li><%= link_to language.title, language.path %></li>
       <% end %>
       <li><a href="https://github.com/spilth/tdd.spilth.org">Source Code</a></li>
@@ -25,5 +24,4 @@
     <%= yield %>
   </body>
 </html>
-
 

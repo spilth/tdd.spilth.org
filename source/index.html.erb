@@ -70,7 +70,7 @@
 <p>Choose the language you would like to learn:</p>
 
 <ul>
-  <% data.languages.sort_by { |language| language['title'] }.each do |language| %>
+  <% languages.each do |language| %>
   <li><%= link_to language.title, language.path %></li>
   <% end %>
 </ul>
