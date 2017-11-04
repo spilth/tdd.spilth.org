@@ -41,5 +41,19 @@ p code, li code {
   padding-right: 0.2em;
 }
 
+ul.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.navbar li {
+  display: inline;
+}
+
+ul.navbar li a {
+  padding-right: 1em;
+}
+
 <%= Rouge::Themes::ThankfulEyes.render(:scope => '.highlight') %>
 

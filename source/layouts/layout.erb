@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title><%= current_page.data.title || 'TDD' %></title>
+    <title><%= yield_content :title %></title>
 
     <%= stylesheet_link_tag "site" %>
     <%= javascript_include_tag "site" %>
@@ -14,9 +14,15 @@
   </head>
 
   <body>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <ul class="navbar">
+      <li><a href="/">Home</a></li>
+      <% data.languages.sort_by { |language| language['title'] }.each do |language| %>
+        <li><%= link_to language.title, language.path %></li>
+      <% end %>
+      <li><a href="https://github.com/spilth/tdd.spilth.org">Source Code</a></li>
+    </ul>
+
+    <%= yield %>
   </body>
 </html>
 
