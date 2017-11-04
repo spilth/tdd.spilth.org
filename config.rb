@@ -1,3 +1,4 @@
+activate :asset_hash
 activate :directory_indexes
 activate :syntax, line_numbers: true
 
