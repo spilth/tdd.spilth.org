@@ -4,3 +4,4 @@
 .sass-cache
 build/
 .s3_sync
+.idea
