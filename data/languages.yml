@@ -7,7 +7,7 @@
     name: Leiningen
     url: https://leiningen.org
     install: brew intall leiningen
-    initialize: lein new default piglatin && cd piglatin
+    initialize: lein new default piglatin
   dependencies:
     name: Leiningen
     url: https://leiningen.org
@@ -40,7 +40,7 @@
     name: mix
     url: https://hexdocs.pm/mix/Mix.html
     install: "# mix is installed along with Elixir"
-    initialize: mix new elixiray && cd elixiray
+    initialize: mix new elixiray
   dependencies:
     name: mix
     url: https://hexdocs.pm/mix/Mix.html
