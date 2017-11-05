@@ -154,14 +154,14 @@
   project: avajay
   homebrew: brew cask install java
   initializer:
-    name: Maven
-    url: https://maven.apache.org
-    install: brew install maven
-    initialize: mvn archetype:generate -DgroupId=com.example -DartifactId=avajay -Dversion=0.1-SNAPSHOT -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+    name: Savant
+    url: http://spilth.org/projects/savant/
+    install: brew tap spilth/tap && brew install savant
+    initialize: savant init -a avajay
   dependencies:
     name: Maven
     url: https://maven.apache.org
-    install: "# We already installed Maven above"
+    install: brew install maven
     file: pom.xml
     resolve: mvn dependency:resolve
   testing:
