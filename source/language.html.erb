@@ -59,9 +59,17 @@ cd <%= language.project %>
 
 <h2>Adding a Testing Library</h2>
 
-<p>We'll use the testing library <%= link_to language.testing.name, language.testing.url %>.</p>
+<p>We're going to use the testing library <%= link_to language.testing.name, language.testing.url %> to write our tests.</p>
 
-<p>Then we can edit the file <code><%= language.dependencies.file %></code> and add <%= language.testing.name %>.</p>
+<p>Edit the file <code><%= language.dependencies.file %></code> and add <%= language.testing.name %> as a testing dependency:</p>
+
+<% code('bash') do %>
+<%= language.testing.content %>
+<% end %>
+
+<p>Then we retrieve <%= language.testing.name %> by running <code><%= language.dependencies.resolve %></code>.</p>
+
+<p>Finally we initialize <%= language.testing.name %> by running <code><%= language.testing.initialize %></code>.</p>
 
 <h2>The First Test</h2>
 

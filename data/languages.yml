@@ -135,6 +135,10 @@
   testing:
     name: RSpec
     url: http://rspec.info
+    file: ubyray.gemspec
+    content: |-
+      spec.add_development_dependency 'rspec'
+    initialize: rspec --init
     run: rspec
   first_test:
     file: spec/piglatin_spec.rb
@@ -167,6 +171,17 @@
   testing:
     name: JUnit
     url: http://junit.org
+    file: pom.xml
+    content: |-
+      <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+      </dependencies>
+    initialize: mkdir -p src/test/java/tdd
     run: mvn test
   first_test:
     file: src/test/java/tdd/PiglatinTest.java
