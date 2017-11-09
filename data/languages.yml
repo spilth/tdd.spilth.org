@@ -150,8 +150,45 @@
           end
         end
       end
-    result: |+
+    result: |-
       ...spec/piglatin_spec.rb:1:in `<top (required)>': uninitialized constant Piglatin (NameError)
+-
+  path: kotlin
+  title: Kotlin
+  project: otlinkay
+  homebrew: brew install kotlin
+  initializer:
+    name: Savant
+    url: http://spilth.org/projects/savant/
+    install: brew tap spilth/tap && brew install savant
+    initialize: savant init -a otlinkay -l kotlin
+  dependencies:
+    name: Maven
+    url: https://maven.apache.org
+    install: brew install maven
+    file: pom.xml
+    resolve: mvn dependency:resolve
+  testing:
+    name: JUnit
+    url: http://junit.org
+    file: pom.xml
+    content: |-
+      <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+      </dependencies>
+    initialize: mkdir -p src/test/kotlin/tdd
+    run: mvn test
+  first_test:
+    file: src/test/kotlin/tdd/OtlinkayTest.kt
+    content: |-
+      TK
+    result: |-
+      TK
 -
   path: java
   title: Java
