@@ -13,3 +13,6 @@ task deploy: [:build] do
   system 'bundle exec middleman s3_sync'
 end
 
+desc 'Alias for deploy task'
+task sync: [:deploy]
+
