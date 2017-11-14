@@ -153,6 +153,58 @@
     result: |-
       ...spec/piglatin_spec.rb:1:in `<top (required)>': uninitialized constant Piglatin (NameError)
 -
+  path: rust
+  title: Rust
+  project: urstray
+  homebrew: brew install rust
+  initializer:
+    name: Cargo
+    url: https://crates.io
+    install: "# cargo is installed along with Rust"
+    initialize: cargo new ustray --lib
+  dependencies:
+    name: Cargo
+    url: https://crates.io
+    install: "# cargo is installed along with Rust"
+    file: Cargo.toml
+    resolve: cargo update
+  testing:
+    name: TK
+    url: TK
+    file: TK
+    content: |-
+      TK
+    initialize: TK
+    run: cargo test
+  first_test:
+    file: src/lib.rs
+    content: |-
+      #[cfg(test)]
+      mod tests {
+          #[test]
+          fn it_works() {
+              assert_eq!("appleway", translate_word("apple"));
+          }
+      }
+    result: |-
+      Compiling ustray v0.1.0 (file:///Users/brian/temp/ustray)
+      error[E0425]: cannot find function `translate_word` in this scope
+        --> src/lib.rs:10:32
+         |
+      10 |         assert_eq!("appleway", translate_word("apple"));
+         |                                ^^^^^^^^^^^^^^ not found in this scope
+         |
+      help: possible candidate is found in another module, you can import it into scope
+         |
+      1  | use translate_word;
+         |
+
+      error: aborting due to previous error
+
+      error: Could not compile `ustray`.
+
+      To learn more, run the command again with --verbose.
+-
   path: kotlin
   title: Kotlin
   project: otlinkay

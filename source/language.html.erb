@@ -15,7 +15,7 @@ xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 <% end %>
 
-<p>Then ensure you have the latest version of Homebrew by typing the following:</p>
+<qp>Then ensure you have the latest version of Homebrew by typing the following:</p>
 
 <% code('bash') do %>
 brew update
@@ -75,7 +75,7 @@ cd <%= language.project %>
 
 <p>Create the file <code><%= language.first_test.file %></code> with the following contents:</p>
 
-<% code('bash') do %>
+<% code(language.path) do %>
 <%= language.first_test.content %>
 <% end %>
 
