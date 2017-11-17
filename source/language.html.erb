@@ -49,13 +49,13 @@ cd <%= language.project %>
 
 <h2>Dependency Management</h2>
 
-<p>TK about dependencies</p>
+<p>When building software you will frequently use libraries and tools from a third party. Since they have their own development lifecycles and versions we want to be able to define a specific version of that dependency to use in our software. We want to do that with a tool and a file.</p>
+
+<p>For <%= language.title %> we'll use the tool <%= link_to(language.dependencies.name, language.dependencies.url) %> and our dependencies will be defined in the file <code><%= language.dependencies.file %></code>.</p>
 
 <% code('bash') do %>
 <%= language.dependencies.install %>
 <% end %>
-
-<p>Your dependencies will be defined in the file <code><%= language.dependencies.file %></code>.</p>
 
 <h2>Adding a Testing Library</h2>
 
