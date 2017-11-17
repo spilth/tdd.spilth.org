@@ -1,4 +1,37 @@
 -
+  path: python
+  title: Python
+  project: ythonpay
+  homebrew: brew install python
+  initializer:
+    name: PyScaffold
+    url: http://pyscaffold.readthedocs.io/
+    install: pip2 install pyscaffold
+    initialize: putup ythonpay
+  dependencies:
+    name: pip
+    url: https://pip.pypa.io/
+    install: "# pip is installed with Python"
+    file: requirements.txt
+    lockfile: ???
+    resolve: pip2 install -r requirements.txt
+  testing:
+    name: pytest
+    url: https://docs.pytest.org/
+    run: python setup.py test
+  first_test:
+    file: tests/test_skeleton.py
+    content: |-
+      import pytest
+      from ythonpay.skeleton import translate_word
+
+      def test_translate_word():
+          assert translate_word("apple") == "appleway"
+    result: |-
+      NameError: global name 'translate_word' is not defined
+
+      tests/test_skeleton.py:8: NameError
+-
   path: clojure
   title: Clojure
   project: piglatin
