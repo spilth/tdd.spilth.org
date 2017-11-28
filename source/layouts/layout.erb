@@ -11,6 +11,14 @@
 
     <%= javascript_include_tag "site" %>
     <script src="https://use.fontawesome.com/488eaeeb3f.js"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-80575-32"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-80575-32');
+    </script>
   </head>
 
   <body>
@@ -18,6 +26,7 @@
       <li><a href="/">Home</a></li>
       <li><a href="https://github.com/spilth/tdd.spilth.org">Project Source Code</a></li>
     </ul>
+
     <ul class="navbar">
       <li>Languages:</li>
       <% languages.each do |language| %>
