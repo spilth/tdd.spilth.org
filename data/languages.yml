@@ -1,4 +1,44 @@
 -
+  path: crystal
+  title: Crystal
+  project: ystalcray
+  homebrew: brew install crystal-lang
+  initializer:
+    name: crystal
+    url: https://crystal-lang.org/docs/using_the_compiler/
+    install: "# crystal is installed with the language"
+    initialize: crystal init lib ystalcray
+  dependencies:
+    name: crystal
+    url: https://crystalshards.xyz
+    install: "# crystal is installed with the language"
+    file: shard.yml
+    lockfile: ???
+    resolve: crystal deps install
+  testing:
+    name: Spec
+    url: https://crystal-lang.org/api/0.23.1/Spec.html
+    run: crystal spec
+  first_test:
+    file: spec/ystalcray.cr
+    content: |-
+      require "./spec_helper"
+
+      describe Ystalcray do
+        describe "translate_word" do
+          it "translates words starting with a vowel" do
+            Ystalcray.translate_word("apple").should eq "appleway"
+          end
+        end
+      end
+    result: |-
+      Error in line 1: while requiring "./spec/ystalcray_spec.cr"
+
+      in spec/ystalcray_spec.cr:6: undefined method 'translate_word' for Ystalcray:Module
+
+            Ystalcray.translate_word("apple").should eq "appleway"
+                      ^~~~~~~~~~~~~~
+-
   path: python
   title: Python
   project: ythonpay
