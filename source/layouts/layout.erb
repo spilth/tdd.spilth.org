@@ -6,6 +6,9 @@
 
     <title><%= yield_content :title %></title>
 
+    <meta name="description" content="A guide to building a Pig Latin translator using test driven development for a variety of languages. Install the language, initialize a project, manage dependencies, add a testing library and write tests.">
+    <meta name="keywords" content="tdd, pig latin, software development, <%= languages.map { |language| language.title.downcase }.join(', ') %>">
+
     <%= stylesheet_link_tag "site" %>
     <link href="https://fonts.googleapis.com/css?family=Lora|Roboto:700" rel="stylesheet">
 
