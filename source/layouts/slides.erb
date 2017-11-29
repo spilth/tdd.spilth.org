@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Test Drive All the Languages!</title>
+
+    <meta name="description" content="A guide to building a Pig Latin translator using test driven development for a variety of languages. Install the language, initialize a project, manage dependencies, add a testing library and write tests.">
+    <meta name="keywords" content="tdd, pig latin, software development, <%= languages.map { |language| language.title.downcase }.join(', ') %>">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+    <%= stylesheet_link_tag "site" %>
+    <link href="https://fonts.googleapis.com/css?family=Lora|Roboto:700" rel="stylesheet">
+
+    <%= javascript_include_tag "site" %>
+    <script src="https://use.fontawesome.com/488eaeeb3f.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        font-size: 24px;
+        line-height: 30px;
+      }
+
+      div.slide {
+        display: none;
+        padding: 24px;
+        margin: 0;
+        width: 90vw;
+        height: 100vh;
+        max-width: 90vw;
+        max-height: 100vh;
+      }
+
+      h1, h2 {
+        margin-top: 0;
+      }
+
+    </style>
+
+    <script>
+      var slideNumber = 0;
+
+      function previousSlide() {
+        var currentSlide = $('.slide:visible');
+        var previousSlide = currentSlide.prev();
+
+        if (previousSlide.length === 1) {
+          currentSlide.hide('slide', {direction: 'right'});
+          previousSlide.fadeIn();
+          slideNumber--;
+        }
+      }
+
+      function nextSlide() {
+        var currentSlide = $('.slide:visible');
+        var nextSlide = currentSlide.next();
+
+        if (nextSlide.length === 1) {
+          currentSlide.hide('slide', {direction: 'left'});
+          nextSlide.fadeIn();
+          slideNumber++;
+        }
+      }
+
+      function previousLanguage() {
+        var currentSlide = $('.slide:visible');
+        var currentLanguage = $('.slide:visible').parent();
+        var previousLanguage = currentLanguage.prev();
+
+        if (previousLanguage.length === 1) {
+          currentSlide.hide('slide', {direction: 'down'});
+          $(previousLanguage.children()[slideNumber]).fadeIn();
+        }
+      }
+
+      function nextLanguage() {
+        var currentSlide = $('.slide:visible');
+        var currentLanguage = $('.slide:visible').parent();
+        var nextLanguage = currentLanguage.next();
+
+        if (nextLanguage.length === 1) {
+          currentSlide.hide('slide', {direction: 'up'});
+          $(nextLanguage.children()[slideNumber]).fadeIn();
+        }
+      }
+
+      $(function() {
+        $('.slide:first').fadeIn();
+
+        $(document).keydown(function(event) {
+          switch(event.keyCode) {
+            case 37:
+              previousSlide();
+              event.preventDefault();
+              break;
+
+            case 39:
+              nextSlide();
+              event.preventDefault();
+              break;
+
+            case 38:
+              previousLanguage();
+              event.preventDefault();
+              break;
+
+            case 40:
+              nextLanguage();
+              event.preventDefault();
+              break;
+
+            default:
+              return;
+          }
+        });
+      });
+    </script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
+
