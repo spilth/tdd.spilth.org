@@ -15,20 +15,6 @@ xcode-select --install
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 <% end %>
 
-<qp>Then ensure you have the latest version of Homebrew by typing the following:</p>
-
-<% code('bash') do %>
-brew update
-<% end %>
-
-<p>And finally, ensure that Homebrew's environment is in a healthy state:</p>
-
-<% code('bash') do %>
-brew doctor
-<% end %>
-
-<p>This may give you some commands to run in order to fix any problems, which you should do before continuing.</p>
-
 <h2>Installing <%= language.title %></h2>
 
 <p>Now we can easily install <%= language.title %> with Homebrew using the following:</p>
