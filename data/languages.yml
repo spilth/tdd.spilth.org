@@ -286,7 +286,7 @@
     name: Savant
     url: http://spilth.org/projects/savant/
     install: brew tap spilth/tap && brew install savant
-    initialize: savant init -a otlinkay -l kotlin
+    initialize: savant init otlinkay -l kotlin
   dependencies:
     name: Maven
     url: https://maven.apache.org
@@ -323,7 +323,7 @@
     name: Savant
     url: http://spilth.org/projects/savant/
     install: brew tap spilth/tap && brew install savant
-    initialize: savant init -a avajay
+    initialize: savant init avajay -l java
   dependencies:
     name: Maven
     url: https://maven.apache.org
