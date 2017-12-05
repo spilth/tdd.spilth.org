@@ -5,7 +5,7 @@ activate :syntax, line_numbers: true
 ignore "/language.html"
 
 data.languages.each do |language|
-  proxy "/#{language.path}/index.html", '/language.html', locals: { language: language }, layout: :layout
+  proxy "/#{language.title.downcase}/index.html", '/language.html', locals: { language: language }, layout: :layout
 end
 
 activate :s3_sync do |s3_sync|

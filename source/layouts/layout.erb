@@ -36,7 +36,7 @@
     <ul class="navbar">
       <li>Languages:</li>
       <% languages.each do |language| %>
-        <li><%= link_to language.title, "/#{language.path}/" %></li>
+        <li><%= link_to language.title, "/#{language.title.downcase}/" %></li>
       <% end %>
     </ul>
 

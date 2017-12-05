@@ -78,7 +78,7 @@ cd <%= language.project %>
 
       <p>Create the file <code><%= language.first_test.file %></code> with the following contents:</p>
 
-<% code(language.path) do %>
+<% code(language.syntax) do %>
 <%= language.first_test.content %>
 <% end %>
     </div>

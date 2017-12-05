@@ -1,6 +1,5 @@
--
-  path: crystal
-  title: Crystal
+- title: Crystal
+  syntax: crystal
   project: ystalcray
   homebrew: brew install crystal-lang
   initializer:
@@ -38,9 +37,8 @@
 
             Ystalcray.translate_word("apple").should eq "appleway"
                       ^~~~~~~~~~~~~~
--
-  path: python
-  title: Python
+- title: Python
+  syntax: python
   project: ythonpay
   homebrew: brew install python
   initializer:
@@ -71,9 +69,8 @@
       NameError: global name 'translate_word' is not defined
 
       tests/test_skeleton.py:8: NameError
--
-  path: clojure
-  title: Clojure
+- title: Clojure
+  syntax: clojure
   project: piglatin
   homebrew: brew install clojure
   initializer:
@@ -104,9 +101,8 @@
           (is (= "appleyay" (translate_word "apple")))))
     result: |-
       Exception in thread "main" java.lang.RuntimeException: Unable to resolve symbol: translate_word in this context, compiling:(piglatin/core_test.clj:7:23)
--
-  path: elixir
-  title: Elixir
+- title: Elixir
+  syntax: elixir
   project: elixiryay
   homebrew: brew install elixir
   initializer:
@@ -144,9 +140,8 @@
              stacktrace:
                (elixiray) Elixiray.translate_word("apple")
                test/elixiray_test.exs:6: (test)
--
-  path: node
-  title: NodeJS
+- title: NodeJS
+  syntax: node
   project: odenay
   homebrew: brew install nodejs
   initializer:
@@ -188,9 +183,8 @@
 
       1 spec, 1 failure
       Finished in 0.005 seconds
--
-  path: ruby
-  title: Ruby
+- title: Ruby
+  syntax: ruby
   project: ubyray
   homebrew: brew install ruby
   initializer:
@@ -225,9 +219,8 @@
       end
     result: |-
       ...spec/piglatin_spec.rb:1:in `<top (required)>': uninitialized constant Piglatin (NameError)
--
-  path: rust
-  title: Rust
+- title: Rust
+  syntax: rust
   project: urstray
   homebrew: brew install rust
   initializer:
@@ -277,9 +270,8 @@
       error: Could not compile `ustray`.
 
       To learn more, run the command again with --verbose.
--
-  path: kotlin
-  title: Kotlin
+- title: Kotlin
+  syntax: kotlin
   project: otlinkay
   homebrew: brew install kotlin
   initializer:
@@ -314,9 +306,8 @@
       TK
     result: |-
       TK
--
-  path: java
-  title: Java
+- title: Java
+  syntax: java
   project: avajay
   homebrew: brew cask install java
   initializer:
@@ -368,3 +359,4 @@
         location: class tdd.PiglatinTest
       [INFO] 1 error
       [INFO] -------------------------------------------------------------
+
